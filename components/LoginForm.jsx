@@ -28,7 +28,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("dashboard");
+      router.replace("/");
     } catch (error) {
       console.log(error);
     }
@@ -45,18 +45,18 @@ export default function LoginForm() {
           height={500}
         />
       </div>
-    <div className=" p-1 t-4">
+      <div className=" p-1 t-4">
         <h1 className="text-xl font-bold my-4">Login</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
-          className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
+            className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-          className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
+            className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
@@ -71,7 +71,8 @@ export default function LoginForm() {
           )}
 
           <Link className="text-sm mt-3 text-right" href={"/register"}>
-            For Sign Up ? <span className=" font-medium text-orange-deep">Sign Up</span>
+            For Sign Up ?{" "}
+            <span className=" font-medium text-orange-deep">Sign Up</span>
           </Link>
         </form>
       </div>

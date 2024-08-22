@@ -1,31 +1,29 @@
-import { InavLink } from "@/types";
 
-
-export const navLink: InavLink[] = [
+export const navLink = [
 	{
 		id: 1,
 		url: '/',
 		title: `All Packages`,
 	},
 	{
-		id: 1,
+		id: 2,
 		url: '/',
 		title: 'Excursion',
 	},
 	{
-		id: 1,
+		id: 3,
 		url: '/',
 		title: 'Transportation',
 	},
 	{
-		id: 1,
+		id: 4,
 		url: '/',
 		title: 'Contact',
 	},
-	{
-		id: 1,
-		url: '/',
-		title: 'Others',
-	},
+	// {
+	// 	id: 5,
+	// 	url: '/dashboard',
+	// 	title: 'dashboard',
+	// },
 	
 ];

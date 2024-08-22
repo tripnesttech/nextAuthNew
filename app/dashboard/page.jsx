@@ -1,5 +1,12 @@
 import UserInfo from "../../components/UserInfo";
+import React from 'react'
 
-export default function Dashboard() {
-  return <UserInfo />;
+const page = () => {
+  return (
+    <div>
+      <UserInfo />
+    </div>
+  )
 }
+
+export default page

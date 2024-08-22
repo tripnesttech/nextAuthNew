@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { navLink } from "@/constants";
 import { FiMenu } from "react-icons/fi";
 import { RxCrossCircled } from "react-icons/rx";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -10,7 +9,7 @@ import Image from "next/image";
 import Button from "../CustomButton";
 import Logo from "../Logo";
 import { signOut, useSession } from "next-auth/react";
-
+import { navLink } from "../../constants";
 
 const Navbar = () => {
   const router = useRouter();
@@ -27,7 +26,11 @@ const Navbar = () => {
       <div className="fixed  z-50 w-full ">
         <div>
           <div className="container-custom h-[80px]  hidden md:flex justify-between items-center bg-orange-thin ">
-            <Logo width={121} height={40} handleClick={()=>router.push("/")} />
+            <Logo
+              width={121}
+              height={40}
+              handleClick={() => router.push("/")}
+            />
             <div className="flex-center text-[16px]  gap-[24px]">
               {navLink.map((nav) => (
                 <div key={nav.id} className=" m-1 text-light_green ">
@@ -49,25 +52,29 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              {
-          session?.user?.email  ? <Button
-          handleClick={() => signOut()}
-             title="Logout"
-             containerStyles="custom-btn-hover"
-           />:<div className="flex-center text-[16px]  gap-[24px] ">
-          <Button
-         handleClick={()=>router.push("/register")}
-            title="Sign Up"
-            containerStyles="custom-btn-hover"
-          />
-          <Button
-         handleClick={()=>router.push("/login")}
-            title="Login"
-            containerStyles="custom-btn-hover"
-          />
-        </div>
-        }
-              
+              {session?.user?.email ? (
+                <div>
+                  {session?.user?.email && <span className=" text-orange-deep">{session?.user?.name}</span>}
+                  <Button
+                    handleClick={() => signOut()}
+                    title="Logout"
+                    containerStyles="custom-btn-hover ml-2"
+                  />
+                </div>
+              ) : (
+                <div className="flex-center text-[16px]  gap-[24px] ">
+                  <Button
+                    handleClick={() => router.push("/register")}
+                    title="Sign Up"
+                    containerStyles="custom-btn-hover"
+                  />
+                  <Button
+                    handleClick={() => router.push("/login")}
+                    title="Login"
+                    containerStyles="custom-btn-hover"
+                  />
+                </div>
+              )}
             </div>
           </div>
 
@@ -119,10 +126,7 @@ const Navbar = () => {
                         <div className=" gap-x-2">
                           {navLink.map((nav) => (
                             <div key={nav.id} className=" m-1 text-light_green">
-                              <Link
-                                onClick={toggleState}
-                                href={nav.url}
-                              >
+                              <Link onClick={toggleState} href={nav.url}>
                                 {nav.title === "All Packages" ||
                                 nav.title === "Others" ? (
                                   <Link href={nav.url}>
