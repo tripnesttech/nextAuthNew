@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../CustomButton";
-
+import { IoMdSearch } from "react-icons/io";
 
 const Hero = () => {
   return (
@@ -32,12 +32,8 @@ const Hero = () => {
             </span>
             <div className=" flex  justify-start items-start mt-2">
               <input placeholder="Thailand Visa" className=" w-[360px] h-[40px] shadow-md rounded-md pl-2 " />
-             
-           
-              <Button
-                title=''
-                containerStyles="custom-btn-fill"
-              />
+
+              <button className="custom-btn-fill flex justify-center items-center">{<IoMdSearch size={28}/>}</button>
             </div>
           </div>
         </div>

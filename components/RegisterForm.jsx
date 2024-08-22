@@ -41,6 +41,7 @@ export default function RegisterForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          
         },
         body: JSON.stringify({
           name,
@@ -52,7 +53,7 @@ export default function RegisterForm() {
       if (res.ok) {
         const form = e.target;
         form.reset();
-        router.push("/");
+        router.push("/login");
       } else {
         console.log("User registration failed.");
       }

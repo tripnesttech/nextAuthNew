@@ -20,10 +20,10 @@ export const navLink = [
 		url: '/',
 		title: 'Contact',
 	},
-	// {
-	// 	id: 5,
-	// 	url: '/dashboard',
-	// 	title: 'dashboard',
-	// },
+	{
+		id: 5,
+		url: '/dashboard',
+		title: 'dashboard',
+	},
 	
 ];

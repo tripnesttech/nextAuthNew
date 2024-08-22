@@ -7,6 +7,7 @@ export default function UserInfo() {
   return (
     <div className="grid place-items-center h-screen">
       <div >
+        <div className=" text-slate-600 font-semibold text-2xl">Profile Info</div>
         <div>
           Name: <span className="text-2xl">{session?.user?.name}</span>
         </div>
