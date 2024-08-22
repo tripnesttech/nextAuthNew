@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Signika Negative", sans-serif;
+}
+
+/* START: General styles */
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.container-custom {
+  @apply container  px-[280px];
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+.flex-center-col {
+  @apply flex flex-col items-center justify-center;
+}
+.flex-start {
+  @apply flex justify-start items-center;
+}
+.flex-start-col {
+  @apply flex flex-col items-start justify-start;
+}
+.flex-between {
+  @apply flex justify-between items-center;
+}
+.flex-between-col {
+  @apply flex flex-col justify-between items-center;
+}
+
+.custom-btn-hover {
+  @apply rounded-md w-[100px] h-[40px] border border-orange-deep hover:bg-orange-deep text-gray-700 hover:text-white transition;
+}
+.custom-btn-fill {
+  @apply rounded-md w-[100px] h-[40px] bg-orange-deep text-white;
+}
+/* END: General styles */
