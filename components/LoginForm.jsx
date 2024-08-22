@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -34,22 +35,33 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="grid place-items-center h-screen">
+    <div className="h-screen w-full m-auto flex justify-center items-center p-96">
+      <div className="">
+        <Image
+          className="w-[669px] h-[705px] hidden md:block"
+          src="/Image_login.svg"
+          alt="hero passport"
+          width={500}
+          height={500}
+        />
+      </div>
     <div className=" p-1 t-4">
         <h1 className="text-xl font-bold my-4">Login</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
+          className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
+          className=" w-[518px] h-[48px] pl-2 bg-slate-100 text-input-placeholder rounded-md"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
-          <button className="bg-neutral-500 text-white font-bold cursor-pointer px-6 py-2">
+          <button className=" bg-orange-deep text-white font-bold cursor-pointer px-6 py-2 w-[518px] h-[48px] ">
             Sign In
           </button>
           {error && (
@@ -59,7 +71,7 @@ export default function LoginForm() {
           )}
 
           <Link className="text-sm mt-3 text-right" href={"/register"}>
-            For Sign Up ? <span className="underline">Sign Up</span>
+            For Sign Up ? <span className=" font-medium text-orange-deep">Sign Up</span>
           </Link>
         </form>
       </div>

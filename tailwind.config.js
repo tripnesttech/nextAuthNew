@@ -26,6 +26,9 @@ module.exports = {
         "black-simple": "#333333",
         "black-deep": "#343434",
         "sky-blue": "#2287F3",
+        "input-bg": "#808080",
+        "input-placeholder": "#4D4D4D",
+        "input-tex": "#333333",
         },
       backgroundImage: {
         'hero-bg': "url('/heroBg.png')"
